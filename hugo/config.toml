@@ -1,0 +1,11 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'TYC'
+theme = "ga-hugo-theme"
+# theme = "hugo-PaperMod"
+# theme = "github-style"
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+mood = "moods"

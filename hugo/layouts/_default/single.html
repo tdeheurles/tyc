@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <h1>{{.Title}}</h1>
+    <h3>{{.Params.highsummary}}</h3>
+    {{.Params.summary}}
+    <hr>
+    {{.Content}}
+{{ end }}
+{{ define "footer" }}
+    This is the default single Footer
+{{ end }}

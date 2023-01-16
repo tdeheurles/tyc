@@ -1,0 +1,11 @@
+<html>
+    <body>
+        <h1>I am the layouts/index.html</h1>
+        {{.Content}}
+        {{range .Pages}}
+            <ul>
+                <li><a href="{{.Permalink}}">{{.Title}}</a></li>
+            </ul>
+        {{end}}
+    </body>
+</html>

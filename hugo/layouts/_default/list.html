@@ -1,10 +1,24 @@
-{{ define "main" }}
+<html>
+
+<head>
+</head>
+
+<body>
     This is the single template
     <h1>I am the layouts/_default/list.html</h1>
     {{.Content}}
     {{range .Pages}}
-        <ul>
-            <li><a href="{{.Permalink}}">{{.Title}}</a></li>
-        </ul>
+    <ul>
+        <li>
+            <a href="{{.Permalink}}">
+                <div class="video-thumbnail">
+                    <img src="https://img.youtube.com/vi/{{.Params.Id}}/hqdefault.jpg" alt="Youtube video thumbnail">
+                </div> -
+                <b>{{ .Title }}</b>
+                {{ .Params.summary }}
+        </li>
+    </ul>
     {{end}}
-{{ end }}
+</body>
+
+</html>

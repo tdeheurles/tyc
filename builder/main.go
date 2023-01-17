@@ -9,9 +9,9 @@ import (
 // Expect this code to generate the hugo content from data
 
 type Video struct {
-	Id          string `yaml:"id" json:"id"`
-	Summary     string `yaml:"summary" json:"summary"`
-	HighSummary string `yaml:"high_summary" json:"high_summary"`
+	Id      string `yaml:"id" json:"id"`
+	Summary string `yaml:"summary" json:"summary"`
+	Title   string `yaml:"title" json:"title"`
 }
 
 type Channel struct {
@@ -44,14 +44,14 @@ func main() {
 			defer f.Close()
 
 			f.Write([]byte("---\n"))
-			f.Write([]byte(fmt.Sprintf("title: %s\n", video.Id)))
+			f.Write([]byte(fmt.Sprintf("id: %s\n", video.Id)))
 			f.Write([]byte(fmt.Sprintf("summary: \"%s\"\n", video.Summary)))
-			f.Write([]byte(fmt.Sprintf("highsummary: \"%s\"\n", video.HighSummary)))
+			f.Write([]byte(fmt.Sprintf("title: \"%s\"\n", video.Title)))
 			f.Write([]byte("---\n"))
 			f.Write([]byte(fmt.Sprintf("{{< youtube %s >}}\n", video.Id)))
 			f.Sync()
 
-			fmt.Printf("video %s - %s\n", video.Id, video.HighSummary)
+			fmt.Printf("video %s - %s\n", video.Title, video.Summary)
 		}
 	}
 }

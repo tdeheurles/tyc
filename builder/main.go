@@ -35,6 +35,7 @@ func main() {
 	}
 
 	for _, channel := range data.Channels {
+		fmt.Printf("channel %s - %d videos\n", channel.Title, len(channel.Videos))
 		for _, video := range channel.Videos {
 
 			f, err := os.Create(videoDirectory + video.Id + ".md")
@@ -51,7 +52,7 @@ func main() {
 			f.Write([]byte(fmt.Sprintf("{{< youtube %s >}}\n", video.Id)))
 			f.Sync()
 
-			fmt.Printf("video %s - %s\n", video.Title, video.Summary)
+			fmt.Printf("- %s - %s\n", video.Id, video.Title)
 		}
 	}
 }

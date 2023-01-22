@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-sm-3">
+        <a href="{{.Permalink}}">
+            <img src="https://img.youtube.com/vi/{{ .Params.id }}/hqdefault.jpg" alt="Youtube video thumbnail"
+                class="rounded img-fluid" alt="Responsive image">
+        </a>
+    </div>
+    <div class="col-sm-9" data-bs-toggle="collapse" href="#collapseMiddle{{.Params.id}}" role="button" aria-expanded="false"
+        aria-controls="collapseMiddle{{.Params.id}}">
+        <p class="text-justify">
+            <b>{{ .Title }}</b>
+            <br>
+            <br>
+            {{ .Params.summary_short_en }}
+        </p>
+    </div>
+    <div class="collapse zindex-offcanvas" style="background-color: #a4aeb6;" id="collapseMiddle{{.Params.id}}"
+        data-bs-toggle="collapse" href="#collapseBig{{.Params.id}}" role="button" aria-expanded="false"
+        aria-controls="collapseBig{{.Params.id}}">
+        <div class="card card-body" style="background-color: #e8ecef;">
+            {{.Params.summary_middle_en}}
+        </div>
+    </div>
+    <div class="collapse" style="background-color: #a4aeb6;" id="collapseBig{{.Params.id}}">
+        <div class="card card-body" style="background-color: #c8d1d8;">
+            {{.Params.summary_big_en}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<html>
+{{partial "header" .}}
+
+<body>
+    {{partial "navbar" .}}
+    {{partial "pageTitle" .}}
+    {{range .Pages}}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="{{.Permalink}}">
+                    <b>{{.Params.title}}</b>
+                </a>
+                <br>
+                {{.Params.summary}}
+            </div>
+        </div>
+        <div class="row">
+            <br>
+        </div>
+    </div>
+    {{end}}
+    {{partial "bootstrap_js" .}}
+</body>
+
+</html>

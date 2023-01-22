@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "builder"
+		},
+		{
+			"path": "get_info"
 		}
 	],
 	"settings": {}

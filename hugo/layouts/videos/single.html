@@ -1,0 +1,14 @@
+<html>
+
+{{partial "header" .}}
+
+<body>
+    {{partial "navbar" .}}
+    {{partial "pageTitle" .}}
+    <h3>{{.Params.highsummary}}</h3>
+    {{.Params.summary}}
+    <hr>
+    {{.Content}}
+</body>
+
+</html>

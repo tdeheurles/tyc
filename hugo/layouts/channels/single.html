@@ -1,0 +1,19 @@
+<html>
+
+{{partial "header" .}}
+
+<body>
+    {{partial "navbar" .}}
+    {{partial "pageTitle" .}}
+    {{.Params.summary}}
+    <br>
+    <br>
+    <div class="container">
+        {{range .Params.videos }}
+            {{partial "channelVideoRow" .}}
+        {{end}}
+    </div>
+    {{partial "bootstrap_js" .}}
+</body>
+
+</html>

@@ -5,4 +5,4 @@ title = 'TYS'
 [taxonomies]
 tag = "tags"
 category = "categories"
-mood = "moods"
+channel = "channels"

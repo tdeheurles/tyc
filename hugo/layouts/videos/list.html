@@ -1,0 +1,16 @@
+<html>
+
+{{partial "header" .}}
+
+<body>
+    {{partial "navbar" .}}
+    {{partial "pageTitle" .}}
+    {{range .Pages}}
+    <div class="container">
+        {{partial "videoRow" .}}
+    </div>
+    {{end}}
+    {{partial "bootstrap_js" .}}
+</body>
+
+</html>

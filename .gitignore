@@ -1,4 +1,5 @@
-hugo/content
+hugo/content/videos
+hugo/content/channels
 hugo/public
 infrastructure/terraform/.terraform
 .aws.secret

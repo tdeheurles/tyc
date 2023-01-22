@@ -1,7 +1,10 @@
 # TYS - The Youtube Synopsis
 
 ## DEV
+### prerequisites
+- install [hugo](https://gohugo.io/)
 ### Start the webserver locally
+
 ```bash
 ./scripts/build_and_run.sh
 ```
@@ -58,14 +61,18 @@ export AWS_ACCESS_SECRET_KEY=xxxxxxxxxxxxxx
 EOF
 ```
 ### Generate or update infrastructure
+#### prerequisites
+- install [hugo](https://gohugo.io/)
+- install [terraform](https://www.terraform.io/)
+#### exec
 ```bash
 ./scripts/terraform.sh
 ```
 
 ### Update website content
 #### prerequisites
-- install hugo
-- install aws cli v2
+- install [hugo](https://gohugo.io/)
+- install [aws cli v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 #### execute
 ```bash
 ./scripts/update_website.sh

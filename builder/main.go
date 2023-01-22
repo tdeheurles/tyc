@@ -9,19 +9,24 @@ import (
 // Expect this code to generate the hugo content from data
 
 type Video struct {
-	Id      string `yaml:"id" json:"id"`
-	Summary string `yaml:"summary" json:"summary"`
-	Title   string `yaml:"title" json:"title"`
+	Id              string `json:"id"`
+	SummaryShortEn  string `json:"summary_short_en"`
+	SummaryShortFr  string `json:"summary_short_fr"`
+	SummaryMiddleEn string `json:"summary_middle_en"`
+	SummaryMiddleFr string `json:"summary_middle_fr"`
+	SummaryBigEn    string `json:"summary_big_en"`
+	SummaryBigFr    string `json:"summary_big_fr"`
+	Title           string `json:"title"`
 }
 
 type Channel struct {
-	Title   string  `yaml:"title" json:"title"`
-	Summary string  `yaml:"summary" json:"summary"`
-	Videos  []Video `yaml:"videos" json:"videos"`
+	Title   string  `json:"title"`
+	Summary string  `json:"summary"`
+	Videos  []Video `json:"videos"`
 }
 
 type Data struct {
-	Channels []Channel `yaml:"channels" json:"channels"`
+	Channels []Channel `json:"channels"`
 }
 
 func main() {
@@ -46,7 +51,12 @@ func main() {
 
 			f.Write([]byte("---\n"))
 			f.Write([]byte(fmt.Sprintf("id: %s\n", video.Id)))
-			f.Write([]byte(fmt.Sprintf("summary: \"%s\"\n", video.Summary)))
+			f.Write([]byte(fmt.Sprintf("summary_short_en: \"%s\"\n", video.SummaryShortEn)))
+			f.Write([]byte(fmt.Sprintf("summary_short_fr: \"%s\"\n", video.SummaryShortFr)))
+			f.Write([]byte(fmt.Sprintf("summary_middle_en: \"%s\"\n", video.SummaryMiddleEn)))
+			f.Write([]byte(fmt.Sprintf("summary_middle_fr: \"%s\"\n", video.SummaryMiddleFr)))
+			f.Write([]byte(fmt.Sprintf("summary_big_en: \"%s\"\n", video.SummaryBigEn)))
+			f.Write([]byte(fmt.Sprintf("summary_big_fr: \"%s\"\n", video.SummaryBigFr)))
 			f.Write([]byte(fmt.Sprintf("title: \"%s\"\n", video.Title)))
 			f.Write([]byte("---\n"))
 			f.Write([]byte(fmt.Sprintf("{{< youtube %s >}}\n", video.Id)))

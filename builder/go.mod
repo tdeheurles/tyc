@@ -1,3 +1,3 @@
-module tycbuilder
+module builder
 
 go 1.19

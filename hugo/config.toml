@@ -1,6 +1,6 @@
 baseURL = 'http://the-youtube-synopsis.s3-website.eu-west-2.amazonaws.com/'
 languageCode = 'en-us'
-title = 'TYC'
+title = 'TYS'
 
 [taxonomies]
 tag = "tags"

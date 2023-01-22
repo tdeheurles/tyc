@@ -1,3 +1,4 @@
 hugo/content
 hugo/public
 infrastructure/terraform/.terraform
+.aws.secret

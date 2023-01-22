@@ -1,4 +1,4 @@
-# TYC
+# TYS - The Youtube Synopsis
 
 ## DEV
 ### Start the webserver locally
@@ -36,8 +36,8 @@ hugo v0.109.0-47b12b83e636224e5e601813ff3e6790c191e371 linux/amd64 BuildDate=202
   Cleaned          |  0
 
 Built in 4 ms
-Watching for changes in /home/asura/repositories/tdeheurles/tyc/hugo/{archetypes,assets,content,data,layouts,static}
-Watching for config changes in /home/asura/repositories/tdeheurles/tyc/hugo/config.toml
+Watching for changes in /home/asura/repositories/tdeheurles/tys/hugo/{archetypes,assets,content,data,layouts,static}
+Watching for config changes in /home/asura/repositories/tdeheurles/tys/hugo/config.toml
 Environment: "development"
 Serving pages from memory
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
@@ -49,10 +49,16 @@ Now go to http://localhost:1313/ and you should see the website
 
 
 ## OPS
+### Define your AWS secrets
+Create a .aws.secret file at the root of the project, and store your aws credentials
+```bash
+cat <<EOF > .aws.secret
+export AWS_ACCESS_KEY=xxxxx
+export AWS_ACCESS_SECRET_KEY=xxxxxxxxxxxxxx
+EOF
+```
 ### Generate or update infrastructure
 ```bash
-export AWS_ACCESS_KEY=...
-export AWS_ACCESS_SECRET_KEY=...
 ./scripts/terraform.sh
 ```
 
@@ -62,12 +68,5 @@ export AWS_ACCESS_SECRET_KEY=...
 - install aws cli v2
 #### execute
 ```bash
-export AWS_ACCESS_KEY=...
-export AWS_ACCESS_SECRET_KEY=...
-
-# will generate all public files for the website
-./scripts/create_website.sh
-
-# push files to s3
- (cd ./hugo/public && aws s3 sync . s3://the-youtube-synopsis/ --delete)
+./scripts/update_website.sh
 ```

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
 project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)/.."
@@ -9,17 +9,5 @@ if [[ ! -e "${project_root}/.aws.secret" ]]; then
 fi
 source "${project_root}/.aws.secret"
 
-cd ${project_root}/infrastructure/terraform
-
-echo "-- init"
-terraform init
-
-echo "-- fmt"
-terraform fmt
-
-echo "-- validate"
-terraform validate
-
-
-echo "-- apply"
-terraform apply
+cd ./hugo/public
+aws s3 sync . s3://the-youtube-synopsis/ --delete

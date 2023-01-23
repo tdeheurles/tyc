@@ -21,4 +21,4 @@ jobs:
         uses: jakejarvis/hugo-build-action@master
         with:
           args: --source=hugo
-      - runs: ls -la ./hugo/public
+      - run: ls -la ./hugo/public

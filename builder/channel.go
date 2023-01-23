@@ -8,9 +8,9 @@ import (
 )
 
 type Channel struct {
-	Title   string  `json:"title"`
-	Summary string  `json:"summary"`
-	Videos  []Video `json:"videos"`
+	Title                   string  `json:"title"`
+	summary_one_sentence_en string  `json:"summary_one_sentence_en"`
+	Videos                  []Video `json:"videos"`
 }
 
 func createChannelContent(channel Channel) {

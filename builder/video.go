@@ -9,27 +9,21 @@ import (
 
 // Video is the data structure for the video content
 type Video struct {
-	Id              string `json:"id"`
-	Title           string `json:"title"`
-	Channel         string `json:"channel"`
-	SummaryShortEn  string `json:"summary_short_en"`
-	SummaryShortFr  string `json:"summary_short_fr"`
-	SummaryMiddleEn string `json:"summary_middle_en"`
-	SummaryMiddleFr string `json:"summary_middle_fr"`
-	SummaryBigEn    string `json:"summary_big_en"`
-	SummaryBigFr    string `json:"summary_big_fr"`
+	Id            string `json:"id"`
+	Title         string `json:"title"`
+	Channel       string `json:"channel"`
+	SummaryShort  string `json:"summary_short"`
+	SummaryMiddle string `json:"summary_middle"`
+	SummaryBig    string `json:"summary_big"`
 }
 
 // VideoShort is the data structure which is defined in the content file
 type VideoShort struct {
-	Id              string `json:"id"`
-	Title           string `json:"title"`
-	SummaryShortEn  string `json:"summary_short_en"`
-	SummaryShortFr  string `json:"summary_short_fr"`
-	SummaryMiddleEn string `json:"summary_middle_en"`
-	SummaryMiddleFr string `json:"summary_middle_fr"`
-	SummaryBigEn    string `json:"summary_big_en"`
-	SummaryBigFr    string `json:"summary_big_fr"`
+	Id            string `json:"id"`
+	Title         string `json:"title"`
+	SummaryShort  string `json:"summary_short"`
+	SummaryMiddle string `json:"summary_middle"`
+	SummaryBig    string `json:"summary_big"`
 }
 
 // createVideoFile creates a video content file

@@ -4,11 +4,13 @@ on:
     branches:
       - main
 jobs:
-  helloworld:
+  "build and deploy":
     runs-on: ubuntu-latest
     steps:
+      - name: Show env
+        run: env|sort
       - name: Checkout
         uses: actions/checkout@v3
-      - name:
-        run: |
-          ls -la
+      - name: Hugo build
+        uses: jakejarvis/hugo-build-action@master
+        

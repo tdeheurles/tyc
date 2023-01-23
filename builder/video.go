@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// Video is the data structure for the video content
 type Video struct {
 	Id              string `json:"id"`
 	Title           string `json:"title"`
@@ -19,6 +20,7 @@ type Video struct {
 	SummaryBigFr    string `json:"summary_big_fr"`
 }
 
+// VideoShort is the data structure which is defined in the content file
 type VideoShort struct {
 	Id              string `json:"id"`
 	Title           string `json:"title"`
@@ -30,6 +32,7 @@ type VideoShort struct {
 	SummaryBigFr    string `json:"summary_big_fr"`
 }
 
+// createVideoFile creates a video content file
 func createVideoFile(video Video, channel Channel) {
 
 	channelTitle := strings.ReplaceAll(channel.Title, " ", "_")

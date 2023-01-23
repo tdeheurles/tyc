@@ -38,7 +38,7 @@ resource "aws_iam_group_membership" "tys-githubaction-membership" {
   group = aws_iam_group.tys.name
 }
 
-#resource "aws_iam_user_policy_attachment" "githubaction_update_website" {
-# user       = aws_iam_user.githubaction.id
-#policy_arn = aws_iam_user_policy.update_website.arn
-#}
+resource "aws_iam_user_policy_attachment" "githubaction_update_website" {
+  user       = aws_iam_user.githubaction.id
+  policy_arn = aws_iam_policy.update_website.arn
+}

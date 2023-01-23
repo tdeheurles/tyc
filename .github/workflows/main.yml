@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   build_and_deploy:
+    environment: demo
     runs-on: ubuntu-latest
     steps:
       - name: Show env
@@ -22,3 +23,10 @@ jobs:
         with:
           args: --source=hugo
       - run: ls -la ./hugo/public
+      - uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: the-youtube-synopsis
+          source_dir: 'hugo/public'
+          destination_dir: ''

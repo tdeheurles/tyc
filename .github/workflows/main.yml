@@ -11,7 +11,14 @@ jobs:
         run: env|sort
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
+      - name: Build
+        run: ./scripts/generate_content_files.sh
       - name: Hugo build
         uses: jakejarvis/hugo-build-action@master
         with:
           args: --source=hugo
+      - runs: ls -la ./hugo/public

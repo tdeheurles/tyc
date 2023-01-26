@@ -45,6 +45,9 @@ func writeResultsToFile(result []byte) {
 }
 
 func getCredentials() Credentials {
+	// {
+	// 	"openai_token": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+	// }
 	file, err := os.Open("credentials.json")
 	if err != nil {
 		panic(err)

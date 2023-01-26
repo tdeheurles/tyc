@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "get_info"
+		},
+		{
+			"path": "openai"
 		}
 	],
 	"settings": {}

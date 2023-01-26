@@ -10,22 +10,11 @@ import (
 	gogpt "github.com/sashabaranov/go-gpt3"
 )
 
-const request = `Suggest four names for an animal that is a superhero.
-
-Animal: Cat
-Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
-Animal: Dog
-Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
-Animal: Elephant
-Names:`
-
-// documentation : https://beta.openai.com/docs/introduction
-
 type Credentials struct {
 	OpenaiToken string `json:"openai_token"`
 }
 
-func main() {
+func doAnOpenAiQuery() {
 	credentials := getCredentials()
 	createDirectory("results")
 	result, shouldReturn := executeOpenAiCall(credentials)
